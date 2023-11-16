@@ -1796,7 +1796,7 @@ GameObject:
   - component: {fileID: 191854336}
   - component: {fileID: 191854335}
   m_Layer: 5
-  m_Name: TimePlayed
+  m_Name: DamageDone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9654,6 +9654,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962001394}
   m_CullTransparentMesh: 1
+--- !u!1 &966642452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966642453}
+  - component: {fileID: 966642454}
+  m_Layer: 5
+  m_Name: StatsDisplayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &966642453
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966642452}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1756749923}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &966642454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966642452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423a9ff8d25d6dd4db38f98bc83fb0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesDefeated: {fileID: 1139641832}
+  projectilesFired: {fileID: 1039505142}
+  creditsSpent: {fileID: 368850269}
+  towersUpgraded: {fileID: 1700036500}
+  livesLost: {fileID: 614563858}
+  damageDone: {fileID: 191854335}
+  towersPurchased: {fileID: 444922659}
+  gameScoreText: {fileID: 1276514279}
 --- !u!1 &979077900
 GameObject:
   m_ObjectHideFlags: 0
@@ -10820,6 +10877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113229462}
   - component: {fileID: 1113229461}
+  - component: {fileID: 1113229463}
   m_Layer: 0
   m_Name: GameStatsManager
   m_TagString: Untagged
@@ -10854,6 +10912,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113229463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113229460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e9a8c2320038e4e825695de2cfe1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1124539248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13702,7 +13772,7 @@ GameObject:
   - component: {fileID: 1340573314}
   - component: {fileID: 1340573313}
   m_Layer: 5
-  m_Name: TimePlayed
+  m_Name: DamageDone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15596,6 +15666,7 @@ RectTransform:
   - {fileID: 91426684}
   - {fileID: 1543601748}
   - {fileID: 65451327}
+  - {fileID: 1579963244}
   m_Father: {fileID: 398318112}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16300,6 +16371,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5924838780463454259, guid: 0587da002fe6c104e841f7bf7f18bf8c, type: 3}
   m_PrefabInstance: {fileID: 1571686765}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1579963243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579963244}
+  - component: {fileID: 1579963245}
+  m_Layer: 5
+  m_Name: StatsDisplayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1579963244
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579963243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1492373490}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1579963245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579963243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423a9ff8d25d6dd4db38f98bc83fb0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesDefeated: {fileID: 1485168640}
+  projectilesFired: {fileID: 272614461}
+  creditsSpent: {fileID: 346652340}
+  towersUpgraded: {fileID: 1729026132}
+  livesLost: {fileID: 407083576}
+  damageDone: {fileID: 1340573313}
+  towersPurchased: {fileID: 1331903118}
+  gameScoreText: {fileID: 1786281898}
 --- !u!1 &1588687523
 GameObject:
   m_ObjectHideFlags: 0
@@ -18082,6 +18210,7 @@ RectTransform:
   - {fileID: 642852375}
   - {fileID: 208455738}
   - {fileID: 663726911}
+  - {fileID: 966642453}
   m_Father: {fileID: 398318112}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

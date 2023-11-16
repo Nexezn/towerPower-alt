@@ -35,6 +35,8 @@ public class LevelManager : MonoBehaviour
     public bool spendCurrency(int amount){
         if (amount <= currency){
             currency -= amount;
+            GameStatsManager.creditsSpent += amount;
+            GameStatsManager.towersPurchased++;
             return true;
 
         }

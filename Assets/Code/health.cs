@@ -12,11 +12,13 @@ public class health : MonoBehaviour
 
     public void takeDamage(int dmg){
         hitPoints -= dmg;
+        GameStatsManager.damageDone += dmg;
 
         if (hitPoints <= 0 && !isDestroyed){
             EnemySpawner.onEnemyDestroy.Invoke();
             LevelManager.main.increaseCurrency(currencyAmount);
             isDestroyed = true;
+            GameStatsManager.enemiesDefeated++;
             Destroy(gameObject);
         }
     }
