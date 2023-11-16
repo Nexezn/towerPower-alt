@@ -8923,8 +8923,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 2075445794}
+        m_TargetAssemblyTypeName: timeHandler, Assembly-CSharp
         m_MethodName: ToggleMenu
         m_Mode: 1
         m_Arguments:
@@ -10853,7 +10853,7 @@ GameObject:
   - component: {fileID: 1403094314}
   - component: {fileID: 1403094313}
   m_Layer: 5
-  m_Name: 1X (2)
+  m_Name: 10X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10925,10 +10925,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030500387}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: setSelectedTower
-        m_Mode: 3
+      - m_Target: {fileID: 2075445794}
+        m_TargetAssemblyTypeName: timeHandler, Assembly-CSharp
+        m_MethodName: timeSetTen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12882,10 +12882,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030500387}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: setSelectedTower
-        m_Mode: 3
+      - m_Target: {fileID: 2075445794}
+        m_TargetAssemblyTypeName: timeHandler, Assembly-CSharp
+        m_MethodName: timeSetHalf
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13705,7 +13705,7 @@ GameObject:
   - component: {fileID: 1757903321}
   - component: {fileID: 1757903320}
   m_Layer: 5
-  m_Name: 1X (1)
+  m_Name: 2X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13777,10 +13777,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030500387}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: setSelectedTower
-        m_Mode: 3
+      - m_Target: {fileID: 2075445794}
+        m_TargetAssemblyTypeName: timeHandler, Assembly-CSharp
+        m_MethodName: timeSetDouble
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15257,10 +15257,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030500387}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: setSelectedTower
-        m_Mode: 3
+      - m_Target: {fileID: 2075445794}
+        m_TargetAssemblyTypeName: timeHandler, Assembly-CSharp
+        m_MethodName: timeSetNormal
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15464,7 +15464,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SHOP
+  m_text: 'SPEED
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16449,7 +16451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -277.8, y: -140}
+  m_AnchoredPosition: {x: -277.8, y: 25}
   m_SizeDelta: {x: 540.7, y: 248.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2075445793

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class mainMenuHandler : MonoBehaviour
 {
      [Header("References")]
-     [SerializeField] private GameObject settingsMenuScreen;
+     [SerializeField] private GameObject creditsMenuScreen;
 
      public void PlayGame(){
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -16,11 +16,11 @@ public class mainMenuHandler : MonoBehaviour
           Application.Quit();
      }
 
-     public void GoToSettings(){
-        settingsMenuScreen.SetActive(true);
+     public void GoToCredits(){
+        creditsMenuScreen.SetActive(true);
     }
 
-    public void ReturnFromSettings(){
-        settingsMenuScreen.SetActive(false);
+    public void ReturnFromCredits(){
+        creditsMenuScreen.SetActive(false);
     }
 }
