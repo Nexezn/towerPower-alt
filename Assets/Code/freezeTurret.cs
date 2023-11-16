@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+using UnityEngine;
 
 public class freezeTurret : MonoBehaviour
 {
@@ -54,9 +57,11 @@ public class freezeTurret : MonoBehaviour
 
         em.resetSpeed();
     }
+
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected(){
         Handles.color = Color.cyan;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
-
+#endif
 }

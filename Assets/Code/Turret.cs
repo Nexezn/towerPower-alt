@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
@@ -92,10 +95,12 @@ public class Turret : MonoBehaviour
     }
     //Vid
 
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected(){
         Handles.color = Color.cyan;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
+#endif
 
     public void OpenUpgradeUI(){
         upgradeUI.SetActive(true);
