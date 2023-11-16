@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class mainMenuHandler : MonoBehaviour
 {
-     [Header("References")]
-     [SerializeField] private GameObject settingsMenuScreen;
-
      public void PlayGame(){
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
      }
@@ -16,11 +13,11 @@ public class mainMenuHandler : MonoBehaviour
           Application.Quit();
      }
 
-     public void GoToSettings(){
-        settingsMenuScreen.SetActive(true);
-    }
-
-    public void ReturnFromSettings(){
-        settingsMenuScreen.SetActive(false);
-    }
+     public void OnSettingsButtonClicked(string sceneName)
+     {
+        if (sceneName != null)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+     }
 }

@@ -50,5 +50,23 @@ public class ResolutionHandler : MonoBehaviour
     public void SetResolution(int resolutionIndex){
         Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, true);
+
+        // Store the selected resolution in PlayerPrefs
+        PlayerPrefs.SetInt("ScreenWidth", resolution.width);
+        PlayerPrefs.SetInt("ScreenHeight", resolution.height);
+        PlayerPrefs.SetInt("RefreshRate", resolution.refreshRate);
+        PlayerPrefs.Save();
+
+        Debug.Log("RESOLUTION IS: " + resolution.width + "X " + resolution.height + " AT " + resolution.refreshRate);
+    }
+
+    public void Awake()
+    {
+        int screenWidth = PlayerPrefs.GetInt("ScreenWidth", Screen.currentResolution.width);
+        int screenHeight = PlayerPrefs.GetInt("ScreenHeight", Screen.currentResolution.height);
+        int refreshRate = PlayerPrefs.GetInt("RefreshRate", Screen.currentResolution.refreshRate);
+
+        Screen.SetResolution(screenWidth, screenHeight, true, refreshRate);
+        Debug.Log("RESOLUTION IS: " + screenWidth + "X " + screenHeight + " AT " + refreshRate);
     }
 }
