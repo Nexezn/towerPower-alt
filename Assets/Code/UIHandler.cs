@@ -67,4 +67,12 @@ public class UIHandler : MonoBehaviour
         helpMenuScreen.SetActive(false);
         pauseMenuScreen.SetActive(true);
     }
+
+    public void GoToCredits(string sceneName)
+    {
+        if(sceneName != null)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+    }
 }

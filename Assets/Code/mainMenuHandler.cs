@@ -15,9 +15,17 @@ public class mainMenuHandler : MonoBehaviour
 
      public void OnSettingsButtonClicked(string sceneName)
      {
+         if (sceneName != null)
+         {
+             SceneManager.LoadScene(sceneName);
+         }
+     }
+
+     public void OnCreditsButtonClicked(string sceneName)
+     {
         if (sceneName != null)
         {
             SceneManager.LoadScene(sceneName);
         }
-     }
+    }
 }
