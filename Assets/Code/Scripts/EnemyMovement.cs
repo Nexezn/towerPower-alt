@@ -6,7 +6,6 @@ public class EnemyMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
-    
 
 
     [Header("Attributes")]
@@ -31,6 +30,7 @@ public class EnemyMovement : MonoBehaviour
 
             if (pathIndex == LevelManager.main.path.Length){
                 EnemySpawner.onEnemyDestroy.Invoke();
+                LevelManager.main.loseLife();
                 Destroy(gameObject);
                 return;
             } else{

@@ -54,6 +54,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator StartWave()
     {
+        LevelManager.main.increaseLevel();
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
