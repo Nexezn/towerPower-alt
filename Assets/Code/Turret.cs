@@ -19,6 +19,8 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private GameObject upgradeUI;
     [SerializeField] private Button upgradeButton;
+    [SerializeField] private GameObject upgradeMenuUI;
+
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5f;
@@ -28,6 +30,10 @@ public class Turret : MonoBehaviour
 
     private float bpsBase;
     private float targetingRangeBase;
+
+    //per tower stats
+    private int projectilesFired = 0;
+
 
     private Transform target;
     private float timeUntilFire;
@@ -70,6 +76,7 @@ public class Turret : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         bullet bulletScript = bulletObj.GetComponent<bullet>();
         bulletScript.setTarget(target);
+        this.projectilesFired++;
         GameStatsManager.projectilesFired++;
     }
 
@@ -110,18 +117,45 @@ public class Turret : MonoBehaviour
         upgradeUI.SetActive(false);
     }
 
-    public void Upgrade(){
-        if (CalculateCost() > LevelManager.main.currency) return;
+    public void Upgrade()
+    {
+        upgradeMenuUI.SetActive(true);
+    }
 
+    public void UpgradeFireRate()
+    {
+        if (CalculateCost() > LevelManager.main.currency) return;
         LevelManager.main.spendCurrency(CalculateCost());
         level++;
 
         bps = CalculateBPS();
-        targetingRange = CalculateRange();
-        
-        UIHandler.main.SetHoveringState(false);
         Debug.Log("New BPS: " + bps);
         Debug.Log("New Range: " + targetingRange);
+        Debug.Log("New Cost: " + CalculateCost());
+    }
+
+    public void UpgradeRange()
+    {
+        if (CalculateCost() > LevelManager.main.currency) return;
+        LevelManager.main.spendCurrency(CalculateCost());
+        level++;
+
+        targetingRange = CalculateRange();
+        Debug.Log("New BPS: " + bps);
+        Debug.Log("New Range: " + targetingRange);
+        Debug.Log("New Cost: " + CalculateCost());
+    }
+
+    public void UpgradeRotateSpeed()
+    {
+        if (CalculateCost() > LevelManager.main.currency) return;
+        LevelManager.main.spendCurrency(CalculateCost());
+        level++;
+
+        rotationSpeed = CalculateRotateSpeed();
+        Debug.Log("New BPS: " + bps);
+        Debug.Log("New Range: " + targetingRange);
+        Debug.Log("New Rotation Speed: " + rotationSpeed);
         Debug.Log("New Cost: " + CalculateCost());
     }
 
@@ -133,8 +167,37 @@ public class Turret : MonoBehaviour
         return Mathf.RoundToInt(baseUpgradeCost * Mathf.Pow(level, 0.8f));
     }
 
+    private float CalculateRotateSpeed()
+    {
+        return rotationSpeed * Mathf.Pow(level, 0.4f);
+    }
+
     private float CalculateRange(){
         return targetingRangeBase * Mathf.Pow(level, 0.4f);
     }
 
+    public float getBps()
+    {
+        return bps;
+    }
+
+    public float getRange()
+    {
+        return targetingRange;
+    }
+
+    public float getRotationSpeed()
+    {
+        return rotationSpeed;
+    }
+
+    public int getProjectilesFired()
+    {
+        return projectilesFired;
+    }
+
+    public int getUpgradesPurchased()
+    {
+        return level-1;
+    }
 }

@@ -43,7 +43,12 @@ public class bullet : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other){
-        other.gameObject.GetComponent<health>().takeDamage(bulletDamage);
-        Destroy(gameObject);
+        if(other.gameObject.GetComponent<health>() != null)
+        {
+            other.gameObject.GetComponent<health>().takeDamage(bulletDamage);
+            Destroy(gameObject);
+        }
+
+        //TODO: destroy game object if its not in play anymore
     }
 }
